@@ -206,6 +206,44 @@ f(4) // 5
 <img src="/f-stack.png" class="ml-10 h-80 rounded shadow" />
 </div>
 
+<v-clicks>
+
+<div class="mt-[10px]">
+如何用递归解决特定的问题呢？
+</div>
+<div class="mt-[10px]">
+递归解决问题的一个思路是：假如我要做到 n，我假设 n-1 已经做到了，那我想达到 n 我需要做什么。这里的做什么就是递归函数要做的事。
+</div>
+<div class="mt-[10px]">
+例子
+</div>
+</v-clicks>
+
+---
+
+## 如何实现字符串的反转
+
+<v-clicks >
+<div class="mt-[20px]">
+假设我要 n-1 前面的字符都是反转好的，现在我要反转第 n 个字母，我需要做什么
+</div>
+
+<div class="mt-[20px]">
+是不是就把第 n 个字符和 n-1 的结果做个对调就好啦
+</div>
+
+<div class="mt-[20px]">
+
+```ts
+function reverse(str) {
+  if (str.length === 1 || str.length === 0) {
+    return str
+  }
+  return `${str[str.length -1]}${reverse(str.slice(0, str.length-1))}`
+}
+```
+</div>
+</v-clicks>
 
 ---
 
@@ -224,8 +262,8 @@ f(4) // 5
 <div v-if="$slidev.nav.clicks === 2">
 打印 DBEAFCG（中序遍历首先遍历左子树，然后访问根结点，最后遍历右子树）
 
-这个打印问题其实是个中序遍历节点的问题，对于遍历过程中到达的任意点来说，首先要遍历左子树，然后打印打印当前节点，最后在遍历右子树。这个例子中递归 case 遍历左右子树，base case 就是左右子树为 null
-
+<p>我们假设有一条线画在根节点上[[D|B|E]|A|[F|C|G]], 对于每个根节点都是先打印了左子树，然后打印根节点，然后打印右子树</p>
+那我们把 n-1 完成的事情看成是 n 层的节点的左右子节点已经完成了打印，现在我们只需要做什么，完成根节点的打印。
 <div style="overflow: auto;height:350px">
 
 ```ts
@@ -264,6 +302,19 @@ DFSTree(tree)
 ```
 </div>
 </div>
+
+---
+
+## 总结下
+
+<v-clicks>
+<div class="mt-[20px]">
+我们知道了递归函数的执行过程，我们就能很好的看懂别人写的递归代码
+</div>
+<div class="mt-[20px]">
+我们知道了如何用递归函数解决特定问题的思路（已知 n-1 解决 n）
+</div>
+</v-clicks>
 
 ---
 
