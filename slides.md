@@ -53,7 +53,6 @@ console.log("我给你讲个故事哈" + tellStory())
 栈是一种抽象数据类型，充当元素的集合，具有两个主要操作:push和pop
 <img src="/stack.png" class="mt-10 h-80 rounded shadow" />
 
-<div class="text-red-500">大家有没有发现一个特性，先进去的元素后出来，后进去的元素先出来（LIFO，last in first out）</div>
 </v-clicks>
 
 ---
